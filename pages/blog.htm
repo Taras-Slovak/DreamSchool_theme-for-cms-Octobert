@@ -1,0 +1,49 @@
+title = "Блог | Dream School"
+url = "/blog/:page?"
+layout = "default"
+meta_title = "Блог"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[viewBag]
+localeMeta_title[en] = "Blog"
+localeMeta_title[ru] = "Блог"
+
+[localePicker]
+forceUrl = 0
+
+[contenteditor]
+==
+{% put head %}
+<link rel="stylesheet" href="{{ 'assets/css/blog.min.css?t=8612121164499'|theme }}" />
+{% endput %}
+
+<!-- Header -->
+
+{% partial 'header/header__blog' %}
+
+<main class="main">
+  <article class="publication">
+
+    {% component 'contenteditor' file="blog/publication__title.htm" %}
+
+    {% partial 'blogPost/top-post' %}
+
+    {% partial 'blogPost/post-flex' %}
+    
+  </article>
+
+<!-- Sidebar -->
+
+{% partial 'sidebar/sidebar' %}
+
+</main>
+
+<!-- Scripts for post and blog -->
+<!-- <script src="{{ 'assets/js/jquery-3.5.1.min.js?t=1655850566233'|theme }}"></script> -->
+<script src="{{ 'assets/js/sortTags.min.js?t=1609151566133'|theme }}"></script>
+
+<script src="{{ 'assets/js/fontawesome.min.js?t=1609240906333'|theme }}"></script>
+<script src="{{ 'assets/js/dynamicAdapt.min.js?t=1609240906333'|theme }}"></script>
+<script src="{{ 'assets/js/animation.min.js?t=1609240906333'|theme }}"></script>

@@ -1,0 +1,519 @@
+title = "Головна | Dream School"
+url = "/"
+layout = "default"
+meta_title = "Головна"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[contactForm contactForm1]
+form_description = "ЗАПИШУТЬСЯ НА ЗУСТРІЧ 
+Ми передзвонимо Вам і виберемо найкращий для Вас час і дату зустрічі."
+
+[contactForm contactForm2]
+form_description = "ОЧНА ФОРМА НАВЧАННЯ 
+Впишіть свої контакти, Ваше ім'я та номер телефону для того, щоб ми розповіли вам детальніше очну форму навчання."
+
+[contactForm contactForm3]
+form_description = "ДИСТАНЦІЙНА ФОРМА НАВЧАННЯ,ЕКСТЕРНАТ 
+Впишіть свої контакти, Ваше ім'я та номер телефону для того, щоб ми розповіли вам детальніше дистанційну форму навчання."
+
+[contactForm contactForm4]
+form_description = "СТОЛЯРНА МАЙСТЕРНЯ 
+Впишіть свої контакти, Ваше ім'я та номер телефону для того, щоб ми розповіли вам детальніше про столярну майстерню."
+
+[contactForm contactForm5]
+form_description = "ТЕАТРАЛЬНА СТУДІЯ
+Напишіть свої контакти, Ваше ім'я та номер телефону для того, щоб ми розповіли вам детальніше про театральну студію."
+
+[contactForm contactForm6]
+form_description = "ЛІТНІЙ ТАБІР
+Впишіть свої контакти, Ваше ім'я та номер телефону для того, щоб ми розповіли вам детальніше про літні табори"
+
+[contactForm contactForm7]
+form_description = "ЗАПИСУЙТЕСТ НА ЗУСТРІЧ В ШКОЛІ!
+Зробіть це просто зараз, не відкладайте!"
+==
+{% put head %}
+    
+    <meta property="og:title" content="Головна | Dream School">
+    <meta property="og:image" content="{{ 'assets/images/dream-school_meta.webp'|theme }}">
+    <meta property="og:description" content="Dream School - школа альтернативної освіти." >
+    <link rel="stylesheet" href="{{ 'assets/css/index.min.css?t=1612037042299'|theme }}" />
+
+{% endput %}
+
+<section class="top">
+
+    <div class="background">
+        <div class="background__inner">
+            <video class="background__video" src="{{ 'assets/video/background_vid.mp4'|theme }}" autoplay muted loop></video>
+        </div>
+    </div>
+
+<!-- Header -->
+
+{% partial 'header/header' %}
+
+
+
+    <div class="promo">
+
+        <div class="wrapper">
+
+            <div class="promo__inner">
+
+                <div class="promo__title">
+
+                    {% component 'contenteditor'file="home/promo/__title.htm" %}
+                    
+                </div>
+                
+                <div class="promo__info">
+
+                    {% component 'contenteditor' file="home/promo/__info.htm" %}
+
+                </div>
+                
+
+                <div class="promo__text">
+
+                    {% component 'contenteditor' file="home/promo/__text.htm" %}
+
+                </div>
+                    
+            </div>
+
+            <button class="modal__btn" id="showModal_1" type="button">{{ 'Запис на зустріч' |_ }}</button>      
+                            
+        </div>
+
+        <div class="modal" id="myModal_1">
+            <div class="modal__content">
+                <span class="modal__close">×</span>
+
+                {% component 'contenteditor' file="home/Modal-1/form__title.htm" %}
+
+                {% component 'contenteditor' file="home/Modal-1/form__txt.htm" %}
+                
+                {% component 'contactForm1' %}
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="advantages">
+    <div class="wrapper">
+
+        <div data-animation="slideInUp" class="advantages__title">        
+            
+            {% component 'contenteditor' file="home/advantages/__title.htm" %}
+
+        </div>
+
+        <div  class="advantages__text">
+            
+            {% component 'contenteditor' file="home/advantages/__text.htm" %}
+
+        </div>
+
+        <div class="advantages__cards">
+            
+            <div data-animation="fadeIn">
+                <div class="card">
+
+                    <svg class="card__img">
+                        <use xlink:href="{{ 'assets/svg/advantages.svg#primary'|theme }}"></use>
+                    </svg>
+
+                    <div class="card__content">
+
+                        {% component 'contenteditor'file="home/advantages/card/__content-1.htm" %}
+
+                    </div>
+
+                    
+            
+                </div>
+            </div>
+            
+            <div data-animation="fadeIn" data-animation-delay="300ms">
+                <div class="card">
+            
+                    <svg class="card__img">
+                        <use xlink:href="{{ 'assets/svg/advantages.svg#secondary'|theme }}"></use>
+                    </svg>
+                
+                    <div class="card__content">
+
+                        {% component 'contenteditor'file="home/advantages/card/__content-2.htm" %}
+
+                    </div>
+
+                </div>
+            </div>
+            
+            <div data-animation="fadeIn" data-animation-delay="600ms">
+                <div class="card">
+                    <svg class="card__img">
+                        <use xlink:href="{{ 'assets/svg/advantages.svg#high'|theme }}"></use>
+                    </svg>
+            
+                    <div class="card__content">
+
+                        {% component 'contenteditor'file="home/advantages/card/__content-3.htm" %}
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="payment">
+    <div class="wrapper">
+
+        <div class="payment__title" data-animation="slideInUp">
+            
+            {% component 'contenteditor' file="home/payment/__title.htm" %}
+
+        </div>
+
+        <div class="payment__cards">
+            <div class="payment__card--one" data-animation="flipInY">
+                <div class="card-pay">
+                    <div class="card-pay__images">
+                        <svg class="card-pay__img">
+                            <use xlink:href="{{ 'assets/svg/payment.svg#boy'|theme }}"></use>
+                        </svg>
+                        <svg class="card-pay__img">
+                            <use xlink:href="{{ 'assets/svg/payment.svg#girl'|theme }}"></use>
+                        </svg>
+                    </div>
+                                        
+                    <div class="card-pay__content">
+
+                        {% component 'contenteditor' file="home/payment/card/__content-1.htm" %}
+
+                    </div>
+
+                </div>
+                <button class="modal__btn" id="showModal_2" type="button">{{ 'Докладніше' |_ }}</button>
+            </div>
+            <div class="payment__card--two" data-animation="flipInY" data-animation-delay="300ms">
+                <div class="card-pay">
+                    <div class="card-pay__images">
+                        <svg class="card-pay__img">
+                            <use xlink:href="{{ 'assets/svg/payment.svg#winner'|theme }}"></use>
+                        </svg>
+                        <svg class="card-pay__img">
+                            <use xlink:href="{{ 'assets/svg/payment.svg#gaming'|theme }}"></use>
+                        </svg>
+                    </div>
+                    
+                    <div class="card-pay__content">
+
+                        {% component 'contenteditor' file="home/payment/card/__content-2.htm" %}
+
+                    </div>
+
+                </div>
+
+                <div class="payment__group-btn">
+                    
+                    <button class="modal__btn" id="showModal_3" type="button">{{ 'Докладніше' |_ }}</button>
+
+                    <a class="payment__btn" href="{{ 'online'|page }}">{{ 'Перейти' |_ }}</a>
+                       
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="myModal_2">
+        
+        <div class="modal__content">
+            <span class="modal__close">×</span>
+
+                {% component 'contenteditor' file="home/Modal-2/form__title.htm" %}
+
+                {% component 'contenteditor' file="home/Modal-2/form__txt.htm" %}
+                
+                {% component 'contactForm2' %}
+
+        </div>
+    </div>
+    <div class="modal" id="myModal_3">
+        <div class="modal__content">
+            <span class="modal__close">×</span>
+           
+                {% component 'contenteditor' file="home/Modal-3/form__title.htm" %}
+
+                {% component 'contenteditor' file="home/Modal-3/form__txt.htm" %}
+                
+                {% component 'contactForm3' %}
+            
+        </div>
+    </div>
+</section>
+
+<section class="slider-video">
+    <div class="wrapper">
+
+        {% component 'contenteditor'file="home/slider-video/__title.htm" %}
+
+        <div class="glider-contain" data-animation="zoomIn" data-animation-delay="300ms">
+
+            <div class="glider">
+
+                {% partial 'video' %}
+                
+            </div>
+            
+            <button class="glider-prev" aria-label="Previous">«</button>
+            <button class="glider-next" aria-label="Next">»</button>
+            <div class="dots" role="tablist"></div>
+        </div>
+          
+    </div>
+</section>
+
+<section class="studios">
+    <div class="wrapper">
+
+        {% component 'contenteditor' file="home/studios/__title.htm" %}
+
+        <div class="studios__cards">
+
+            <div data-animation="flipInX">
+                <div class="card-studios">
+                    <svg class="card-studios__img">
+                        <use xlink:href="{{ 'assets/svg/studios.svg#english'|theme }}"></use>
+                    </svg>
+
+                    <div class="card-studios__content">
+                        {% component 'contenteditor' file="home/studios/card/__content-1.htm" %}
+                    </div>
+
+                </div>
+            </div>
+
+            <div data-animation="flipInX" data-animation-delay="300ms">
+                <div class="card-studios">
+                    <svg class="card-studios__img">
+                        <use xlink:href="{{ 'assets/svg/studios.svg#vocal'|theme }}"></use>
+                    </svg>
+
+                    <div class="card-studios__content">
+                        {% component 'contenteditor' file="home/studios/card/__content-2.htm" %}
+                    </div>
+
+                </div>
+            </div>
+
+            <div data-animation="flipInX" data-animation-delay="600ms">
+                <div class="card-studios">
+                    <svg class="card-studios__img">
+                        <use xlink:href="{{ 'assets/svg/studios.svg#pottery'|theme }}"></use>
+                    </svg>
+
+                    <div class="card-studios__content">
+                        {% component 'contenteditor' file="home/studios/card/__content-3.htm" %}
+                    </div>
+
+                </div>
+            </div>
+
+            <div data-animation="flipInX" data-animation-delay="300ms">
+                <div class="card-studios">
+                    <svg class="card-studios__img">
+                        <use xlink:href="{{ 'assets/svg/studios.svg#paint'|theme }}"></use>
+                    </svg>
+
+                    <div class="card-studios__content">
+                        {% component 'contenteditor' file="home/studios/card/__content-4.htm" %}
+                    </div>
+
+                </div>
+            </div>
+            
+            <div data-animation="flipInX" data-animation-delay="600ms">
+                <div class="card-studios">
+                    <svg class="card-studios__img">
+                        <use xlink:href="{{ 'assets/svg/studios.svg#architect'|theme }}"></use>
+                    </svg>
+
+                    <div class="card-studios__content">
+                        {% component 'contenteditor' file="home/studios/card/__content-5.htm" %}
+                    </div>
+
+                </div>
+            </div>
+
+            <div data-animation="flipInX" data-animation-delay="700ms">
+                <div class="card-studios">
+                    <svg class="card-studios__img">
+                        <use xlink:href="{{ 'assets/svg/studios.svg#dance'|theme }}"></use>
+                    </svg>
+
+                    <div class="card-studios__content">
+                        {% component 'contenteditor' file="home/studios/card/__content-6.htm" %}
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="studios-2">
+    <div class="wrapper">
+        <div class="studios-2__cards">
+            <div class="studios-2__card--one" data-animation="flipInY">
+                <div class="card-big">
+                    <picture class="card-big__picture">
+                        <source type="image/webp" srcset="
+                    {{ 'assets/images/carpentry.webp    1x'|theme }},
+                    {{ 'assets/images/carpentry@2x.webp 2x'|theme }},
+                    {{ 'assets/images/carpentry@3x.webp 3x'|theme }},
+                    {{ 'assets/images/carpentry@4x.webp 4x'|theme }}
+                  " />
+                        <img class="card-big__img" src="{{ 'assets/images/carpentry.jpg'|theme }}" srcset="
+                    {{ 'assets/images/carpentry@2x.jpg 2x'|theme }},
+                    {{ 'assets/images/carpentry@3x.jpg 3x'|theme }},
+                    {{ 'assets/images/carpentry@4x.jpg 4x'|theme }}
+                  " alt="some_picture" />
+                    </picture>
+
+                    <div class="card-big__content">
+                        {% component 'contenteditor' file="home/studios-2/card/__content-1.htm" %}
+                    </div>
+
+                </div>
+                <div class="studios-2__modal">
+                    <button class="modal__btn" id="showModal_4" type="button">
+                        {{ 'Детальніше' |_ }}
+                    </button>
+                </div>
+            </div>
+            <div class="studios-2__card--two" data-animation="flipInY">
+                <div class="card-big">
+                    <picture class="card-big__picture">
+                        <source type="image/webp" srcset="
+                    {{ 'assets/images/theatrical.webp    1x'|theme }},
+                    {{ 'assets/images/theatrical@2x.webp 2x'|theme }},
+                    {{ 'assets/images/theatrical@3x.webp 3x'|theme }},
+                    {{ 'assets/images/theatrical@4x.webp 4x'|theme }}
+                  " />
+                        <img class="card-big__img" src="{{ 'assets/images/theatrical.jpg'|theme }}" srcset="
+                    {{ 'assets/images/theatrical@2x.jpg 2x'|theme }},
+                    {{ 'assets/images/theatrical@3x.jpg 3x'|theme }},
+                    {{ 'assets/images/theatrical@4x.jpg 4x'|theme }}
+                  " alt="some_picture" />
+                    </picture>
+
+                    <div class="card-big__content">
+                        {% component 'contenteditor' file="home/studios-2/card/__content-2.htm" %}
+                    </div>
+
+                </div>
+                <div class="studios-2__modal">
+                    <button class="modal__btn" id="showModal_5" type="button">
+                        {{ 'Детальніше' |_ }}
+                    </button>
+                </div>
+            </div>
+            <div class="studios-2__card--three" data-animation="flipInY">
+                <div class="card-big">
+                    <picture class="card-big__picture">
+                        <source type="image/webp" srcset="
+                    {{ 'assets/images/camp.webp    1x'|theme }},
+                    {{ 'assets/images/camp@2x.webp 2x'|theme }},
+                    {{ 'assets/images/camp@3x.webp 3x'|theme }},
+                    {{ 'assets/images/camp@4x.webp 4x'|theme }}
+                  " />
+                        <img class="card-big__img" src="{{ 'assets/images/camp.jpg'|theme }}" srcset="
+                    {{ 'assets/images/camp@2x.jpg 2x'|theme }},
+                    {{ 'assets/images/camp@3x.jpg 3x'|theme }},
+                    {{ 'assets/images/camp@4x.jpg 4x'|theme }}
+                  " alt="some_picture" />
+                    </picture>
+
+                    <div class="card-big__content">
+                        {% component 'contenteditor' file="home/studios-2/card/__content-3.htm" %}
+                    </div>
+
+                </div>
+                <div class="studios-2__modal">
+                    <button class="modal__btn" id="showModal_6" type="button">
+                        {{ 'Детальніше' |_ }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="myModal_4">
+        <div class="modal__content">
+            <span class="modal__close">×</span>
+
+            {% component 'contenteditor' file="home/Modal-4/form__title.htm" %}
+
+            {% component 'contenteditor' file="home/Modal-4/form__txt.htm" %}
+
+            {% component 'contactForm4' %}
+
+        </div>
+    </div>
+    <div class="modal" id="myModal_5">
+        <div class="modal__content">
+            <span class="modal__close">×</span>
+            
+            {% component 'contenteditor' file="home/Modal-5/form__title.htm" %}
+
+            {% component 'contenteditor' file="home/Modal-5/form__txt.htm" %}
+
+            {% component 'contactForm5' %}
+
+        </div>
+    </div>
+    <div class="modal" id="myModal_6">
+        <div class="modal__content">
+            <span class="modal__close">×</span>
+
+            {% component 'contenteditor' file="home/Modal-6/form__title.htm" %}
+
+            {% component 'contenteditor' file="home/Modal-6/form__txt.htm" %}
+
+            {% component 'contactForm6' %}
+
+        </div>
+    </div>
+</section>
+
+<section class="documents">
+    <div class="wrapper">
+
+        {% component 'contenteditor' file="online/documents/__title.htm" %}
+
+        <div class="documents__text--one" data-animation="flipInX">
+            {% component 'contenteditor' file="online/documents/__text--one.htm" %}
+        </div>
+
+        <div class="documents__text--two" data-animation="flipInX">
+            {% component 'contenteditor' file="online/documents/__text--two.htm" %}
+        </div>
+    </div>
+</section>
+
+{% partial 'home-And-Online/appointment' %}
+
+
+<!-- Scripts for index -->
+
+<script src="{{ 'assets/js/animation.min.js?t=1609240906355'|theme }}"></script>
+<script src="{{ 'assets/js/modal-index.min.js?t=1609240906444'|theme }}"></script>
+<script src="{{ 'assets/js/glider.min.js?t=1609240906333'|theme }}"></script>
