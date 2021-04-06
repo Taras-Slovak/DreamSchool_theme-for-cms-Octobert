@@ -1,0 +1,29 @@
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "top-post"
+postsPerPage = "{{ 1 }}"
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "blog"
+postPage = "post"
+==
+{% for post in posts %}
+
+        <a class="top-post" href="{{ post.url }}">
+            <div class="top-post__pic">
+                
+                {% for image in post.featured_images|slice(0, 1) %}      
+
+                    <img class="top-post__img" src="{{ image.path }}" alt="{{ post.title }}">
+
+                {% endfor %}
+
+            </div>
+            <h2 class="top-post__title">{{ post.title }}</h2>
+            <div class="top-post__texts">
+                <p class="top-post__txt">{{ post.excerpt }} </p>
+            </div>
+            <p class="top-post__go">{{ 'Дізнатися більше...' |_ }}</p>
+        </a>
+
+    {% endfor %}

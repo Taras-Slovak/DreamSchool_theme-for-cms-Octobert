@@ -1,0 +1,60 @@
+<!--************************************
+        Header Start
+*************************************-->
+<div class="header">
+    <div class="progress-line">
+        <div class="progress-line__item"></div>
+    </div>
+    <nav class="navbar">
+        <a class="navbar__logo" href="{{ 'home'|page }}">
+            <svg>
+                <use xlink:href="{{ 'assets/svg/logo.svg#logo'|theme }}"></use>
+            </svg>
+        </a>
+
+        
+        <div class="navbar__burger"><span class="navbar__btn"></span></div>
+        <div class="navbar__mobile">
+
+            <div class="navbar__info">
+            
+                {% partial 'tel-and-mail' %}
+    
+            </div>
+
+            <div class="navbar__items-group">
+
+                <a class="navbar__item" href="{{ 'home'|page }}">{{ 'ГОЛОВНА' |_ }}</a>
+
+                <a class="navbar__item" href="{{ 'online'|page }}">{{ 'ДИСТАНЦІЙНА' |_ }}</a>
+
+                <a class="navbar__item" href="{{ 'news'|page }}">{{ 'НОВИНИ' |_ }}</a>
+
+                <a class="navbar__item" href="{{ 'blog'|page }}">{{ 'БЛОГ' |_ }}</a>
+                
+                <a class="navbar__item" href="https://dream-school.ispringlearn.com/">{{ 'УВІЙТИ ONLINE' |_ }}</a>
+
+            </div>
+
+            <div class="navbar__socials">
+                <a class="navbar__social" target="_blank" href="https://www.facebook.com/dreamschool.ua/">
+                    <svg>
+                        <use xlink:href="{{ 'assets/svg/socials.svg#facebook'|theme }}"></use>
+                    </svg></a><a class="navbar__social" target="_blank"
+                    href="https://www.youtube.com/c/DreamSchoolua/videos">
+                    <svg>
+                        <use xlink:href="{{ 'assets/svg/socials.svg#youtube'|theme }}"></use>
+                    </svg></a>
+            </div>
+
+            {% partial 'header/_lang' %}
+            
+        </div>
+
+
+
+    </nav>
+</div>
+<!--************************************
+        Header End
+*************************************-->

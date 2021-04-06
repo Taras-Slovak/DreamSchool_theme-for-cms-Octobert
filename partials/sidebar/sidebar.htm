@@ -1,0 +1,32 @@
+<!--************************************
+        Sidebar Start
+*************************************-->
+
+<article class="sidebar" data-da=".navbar__mobile, 1200, last">
+    
+    {% partial 'sidebar/_searchForm' %}
+
+    <aside class="announcement">
+
+        {% component 'contenteditor' file="_sidebar/announcement__title.htm" %}
+
+        {% component 'contenteditor' file="_sidebar/announcement__txt.htm" %}
+        
+    </aside>
+
+    <aside class="content-filter">
+
+        {% component 'contenteditor' file="_sidebar/content-filter__title.htm" %}
+
+        {% partial 'sidebar/_tags' %}
+     
+    </aside>
+
+    {% partial 'sidebar/_popular-posts' %}
+
+    
+</article>
+
+<!--************************************
+        Sidebar End
+*************************************-->

@@ -1,0 +1,62 @@
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "post-flex"
+postsPerPage = 50
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "blog"
+postPage = "post"
+==
+{% set posts = blogPosts.posts %}
+
+<section class="post-flex" >
+
+    {% for post in posts %}
+
+    <div class="post-preview">
+    
+        <a class="post-preview__link" href="{{ post.url }}">
+            <div class="post-preview__pic">
+
+                {% for image in post.featured_images|slice(0, 1) %}
+
+                    <img class="post-preview__img" src="{{ image.path }}" alt="{{ post.title }}">
+                    
+                {% endfor %}
+
+               
+            </div>
+            <h3 class="post-preview__title">{{ post.title }}</h3>
+        </a>
+                
+        <span class="post-preview__views"><i class="far fa-eye"></i> {{ post.views }}</span>
+               
+
+    </div>
+
+    {% endfor %}
+
+
+</section>
+
+{% if posts.lastPage > 1 %}
+    <ul class="pagination">
+        {% if posts.currentPage > 1 %}
+            <li class="pagination__item">
+                <a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): (posts.currentPage-1) }) }}"><i class="fas fa-long-arrow-alt-left"></i> попередня</a>
+            </li>
+        {% endif %}
+
+        {% for page in 1..posts.lastPage %}
+            <li class="pagination__item {{ posts.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): post }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if posts.lastPage > posts.currentPage %}
+            <li class="pagination__item">
+                <a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): (posts.currentPage+1) }) }}">наступна <i class="fas fa-long-arrow-alt-right"></i></a>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}

@@ -1,0 +1,34 @@
+<section class="appointment">
+    <div class="wrapper">
+        <div class="appointment__content">
+
+            {% component 'contenteditor' file="_appointment/__title.htm" %}
+
+            {% component 'contenteditor' file="_appointment/__sub-title.htm" %}
+
+            
+            <div class="appointment__info" data-animation="fadeIn">
+
+                {% component 'contenteditor' file="_appointment/__info.htm" %}
+                
+            </div>
+            
+        </div>
+        
+        <div data-animation="flipInX">
+
+            {% component 'contactForm7' %}
+            
+        </div>
+
+        <div class="appointment__text">
+            {% component 'contenteditor' file="_appointment/__text.htm" %}
+        </div>
+
+        {% partial 'home-And-Online/partners' %}
+
+        <div class="appointment__footer" data-animation="zoomIn">
+            {% component 'contenteditor' file="_appointment/__footer.htm" %}
+        </div>
+    </div>
+</section>

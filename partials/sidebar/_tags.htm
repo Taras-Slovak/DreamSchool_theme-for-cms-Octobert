@@ -1,0 +1,18 @@
+[tags]
+results = 0
+
+sortOrder = "name asc"
+==
+{% set tags = tags.tags %}
+
+
+
+<div class="content-filter__flex">
+
+    {% for tag in tags %} 
+
+    <a class="content-filter__item post-sidebar__tag" href="{{ 'tag'|page({ slug: tag.slug }) }}">{{ tag.name }}</a>
+
+    {% endfor %}
+
+</div>

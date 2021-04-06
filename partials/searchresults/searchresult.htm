@@ -1,0 +1,14 @@
+<a class="searchresult" href="{{ result.url | app }}">
+
+    {% if result.thumb %}
+
+        {% partial __SELF__ ~ '::thumbnail' result = result %}
+
+    {% endif %}
+
+    <div class="searchresult__content" >
+
+        {% partial __SELF__ ~ '::content' result = result %}
+    </div>
+    
+</a>
